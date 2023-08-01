@@ -55,7 +55,7 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		for (; head != NULL; m++)
 		{
-			printf("[%p]%d\n", (void *)head, head->n);
+			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
 		}
 	}
@@ -63,10 +63,10 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		for (ind = 0; ind < m; ind++)
 		{
-			printf("[%p]%d\n", (void *)head, head->n);
+			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
 		}
-		printf("->[%p]%d\n", (void *)head, head->n);
+		printf("->[%p] %d\n", (void *)head, head->n);
 	}
 	return (m);
 }
