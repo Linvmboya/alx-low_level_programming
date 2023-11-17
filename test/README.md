@@ -1,1 +1,1 @@
-0x09. C - Static libraries
+0x0A. C - argc, argv
