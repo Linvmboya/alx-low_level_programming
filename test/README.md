@@ -1,2 +1,1 @@
-0x0D. C - Preprocessor
-C
+0x0E. C - Structures, typedef
