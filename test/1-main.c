@@ -1,23 +1,19 @@
-#include "main.h"
+#include "1-pi.h"
+#include "1-pi.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code
  *
  * Return: Always 0.
  */
 int main(void)
 {
-    char *s;
+    float a;
+    float r;
 
-    s = _strdup("ALX SE");
-    if (s == NULL)
-    {
-        printf("failed to allocate memory\n");
-        return (1);
-    }
-    printf("%s\n", s);
-    free(s);
+    r = 98;
+    a = PI * r * r;
+    printf("%.3f\n", a);
     return (0);
 }
