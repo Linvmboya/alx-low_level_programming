@@ -1,38 +1,34 @@
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
-#include "function_pointers.h"
-
-/**
- * print_elem - prints an integer
- * @elem: the integer to print
- *
- * Return: Nothing.
- */
-void print_elem(int elem)
-{
-    printf("%d\n", elem);
-}
-
-/**
- * print_elem_hex - prints an integer, in hexadecimal
- * @elem: the integer to print
- *
- * Return: Nothing.
- */
-void print_elem_hex(int elem)
-{
-    printf("0x%x\n", elem);
-}
+#include "lists.h"
 
 /**
  * main - check the code
- *
+ * 
  * Return: Always 0.
  */
 int main(void)
 {
-    int array[5] = {0, 98, 402, 1024, 4096};
+	list_t *head;
+	list_t *new;
+	list_t hello = {"World", 5, NULL};
+	size_t n;
 
-    array_iterator(array, 5, &print_elem);
-    array_iterator(array, 5, &print_elem_hex);
-    return (0);
+	head = &hello;
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	new->str = strdup("Hello");
+	new->len = 5;
+	new->next = head;
+	head = new;
+	n = list_len(head);
+	printf("-> %lu elements\n", n);
+	free(new->str);
+	free(new);
+	return (0);
 }
