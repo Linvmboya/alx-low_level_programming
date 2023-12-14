@@ -1,28 +1,22 @@
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
-#include "lists.h"
+#include "main.h"
 
 /**
  * main - check the code
- * 
+ *
  * Return: Always 0.
  */
 int main(void)
 {
-	listint_t *head;
+	unsigned int n;
 
-	head = NULL;
-	add_nodeint_end(&head, 0);
-	add_nodeint_end(&head, 1);
-	add_nodeint_end(&head, 2);
-	add_nodeint_end(&head, 3);
-	add_nodeint_end(&head, 4);
-	add_nodeint_end(&head, 98);
-	add_nodeint_end(&head, 402);
-	add_nodeint_end(&head, 1024);
-	print_listint(head);
-	free_listint2(&head);
-	printf("%p\n", (void *)head);
+	n = flip_bits(1024, 1);
+	printf("%u\n", n);
+	n = flip_bits(402, 98);
+	printf("%u\n", n);
+	n = flip_bits(1024, 3);
+	printf("%u\n", n);
+	n = flip_bits(1024, 1025);
+	printf("%u\n", n);
 	return (0);
 }
