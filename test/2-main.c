@@ -1,20 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
  * main - check the code
- *
+ * 
  * Return: Always 0.
  */
-int main(void)
+int main(int ac, char **av)
 {
-	int n;
+	int res;
 
-	n = get_bit(1024, 10);
-	printf("%d\n", n);
-	n = get_bit(98, 1);
-	printf("%d\n", n);
-	n = get_bit(1024, 0);
-	printf("%d\n", n);
+	if (ac != 3)
+	{
+		dprintf(2, "Usage: %s filename text\n", av[0]);
+		exit(1);
+	}
+	res = append_text_to_file(av[1], av[2]);
+	printf("-> %i)\n", res);
 	return (0);
 }
